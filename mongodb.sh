@@ -76,7 +76,6 @@ systemctl restart "$packagename"
 validate_status
 netstat -lntp | grep 27017
 validate_status  
-
 }
 
 checkversion(){
