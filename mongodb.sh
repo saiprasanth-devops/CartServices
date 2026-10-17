@@ -92,10 +92,11 @@ echo ""$packagename" is  installed so please exit"
 exit 1
 }
 
-for app in "${appname[@]}"
+for app in "${APPNAME[@]}"
 do
 echo "$app"
-packagename=$("echo $app")
+# packagename=$("echo $app")
+packagename=$app
 validate_status
 if [ "$packagename" = "mongodb-org" ];
 do
