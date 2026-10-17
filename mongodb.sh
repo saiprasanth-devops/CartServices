@@ -36,7 +36,7 @@ cd "${foldername}"
 validate_status
 touch "$filename"
 validate_status
-echo "$MONGO_SERVICEFILE" >> "${foldername}""${filename}"  >> "$logfilefullname"
+echo "$MONGO_SERVICEFILE" >> "$logfilefullname"
 validate_status
 # status=$(echo $?)  
 # echo "$status"
@@ -90,6 +90,7 @@ echo ""$packagename" is not installed so proceed"
 else
 echo ""$packagename" is  installed so please exit"
 exit 1
+fi
 }
 
 for app in "${APPNAME[@]}"
