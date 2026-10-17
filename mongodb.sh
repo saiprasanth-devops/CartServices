@@ -9,9 +9,11 @@ configadrchange="sed -i 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf"
 configfile="/etc/mongod.conf"
 
 mkdir -p "${logsfolder}"
-logfilefullname=$(touch ""${logsfolder}""${logfilename}"_$(date +%F-%S).txt")
+$(touch ""${logsfolder}""${logfilename}"_$(date +%F-%S).txt")
+logfilefullname=$(realpath $0)
+# echo "$logfilefullname"
+echo ""$logfilefullname""
 
-echo "$logfilefullname"
 validate_status(){
 statuscode=$(echo $?)
 echo "$statuscode"
