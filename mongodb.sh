@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-foldername="/etc/systemd/system/"
-filename="servicefile.service"
+foldername="/etc/yum.repos.d/"
+filename="mongo.repo"
 logsfolder="/home/ec2-user/CartServices/"
 logfilename=$0
 configadrchange="sed -i 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf"
@@ -26,7 +26,12 @@ exit 1
 } >> "$logfilefullname"
 validate_status
 user_id=$(id -u)
+if [ "$user_id" -eq 0 ];
+then 
 validate_status
+else
+echo "user "${user_id}" and please execute with root access"
+fi
 cd "${foldername}"
 validate_status
 touch "$filename"
