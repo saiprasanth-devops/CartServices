@@ -12,7 +12,7 @@ mkdir -p "${logsfolder}"
 logfilefullname=$(touch ""${logsfolder}""${logfilename}"_$(date +%F-%S).txt")
 
 validate_status(){
-statuscode= $(echo $?)
+statuscode=$(echo $?)
 echo "$statuscode"
 if [ "$statuscode" -eq 0];
 then 
