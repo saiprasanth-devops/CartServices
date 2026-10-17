@@ -12,9 +12,7 @@ mkdir -p "${logsfolder}"
 logfilefullname=$(touch ""${logsfolder}""${logfilename}"_$(date +%F-%S).txt")
 
 validate_status(){
-
 statuscode= $(echo $?)
-
 if [ "$statuscode" -eq 0];
 then 
 echo "status code is "${statuscode}" ....proceed"   
@@ -22,7 +20,6 @@ else
 echo "status code is "${statuscode}"....exit"
 exit 1
  fi
-
 } >> "$logfilefullname"
 validate_status
 user_id=$(id -u)
@@ -40,7 +37,6 @@ echo "$MONGO_SERVICEFILE" >> "$logfilefullname"
 validate_status
 # status=$(echo $?)  
 # echo "$status"
-
 change_address(){
 
 if [ -f "$configfile" ];
@@ -100,7 +96,7 @@ echo "$app"
 packagename=$app
 validate_status
 if [ "$packagename" = "mongodb-org" ];
-do
+then
 checkversion "$packagename"
 mongodb_setup "$packagename"
 # elif [ "$packagename" = "redis:7" ]
@@ -111,6 +107,7 @@ else
 echo ""$packagename" is not equal to the given list we need to install"
 exit 1
 fi
+done
 
 
 
