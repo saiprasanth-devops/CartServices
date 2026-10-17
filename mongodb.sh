@@ -13,7 +13,7 @@ $(touch ""${logsfolder}""${logfilename}"_$(date +%F-%S).txt")
 logfilefullname=$(realpath $0)
 logfilefullname=$(realpath "${logsfolder}/${logfilename}")
 echo "$logfilefullname"
-
+# ###########added the data
 validate_status(){
 statuscode=$(echo $?)
 echo "$statuscode"
