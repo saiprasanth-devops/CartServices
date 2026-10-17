@@ -24,8 +24,7 @@ else
 echo "status code is "${statuscode}"....exit"
 exit 1
  fi
-}
-# } >> "$logfilefullname"
+} >> "$logfilefullname"
 validate_status
 user_id=$(id -u)
 if [ "$user_id" -eq 0 ];
