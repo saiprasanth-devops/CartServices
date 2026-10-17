@@ -11,8 +11,8 @@ configfile="/etc/mongod.conf"
 mkdir -p "${logsfolder}"
 $(touch ""${logsfolder}""${logfilename}"_$(date +%F-%S).txt")
 logfilefullname=$(realpath $0)
-# echo "$logfilefullname"
-echo ""$logfilefullname""
+logfilefullname=$(realpath "${logsfolder}/${logfilename}")
+echo "$logfilefullname"
 
 validate_status(){
 statuscode=$(echo $?)
@@ -38,7 +38,7 @@ cd "${foldername}"
 validate_status
 touch "$filename"
 validate_status
-echo "$MONGO_SERVICEFILE" >> "$logfilefullname"
+echo "$MONGO_SERVICEFILE" >> ""${foldername}""${filename}""
 validate_status
 # status=$(echo $?)  
 # echo "$status"
