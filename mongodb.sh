@@ -13,7 +13,7 @@ logfilefullname=$(touch ""${logsfolder}""${logfilename}"_$(date +%F-%S).txt")
 
 validate_status(){
 statuscode= $(echo $?)
-echo "----------- "${statuscode}""
+echo "$statuscode"
 if [ "$statuscode" -eq 0];
 then 
 echo "status code is "${statuscode}" ....proceed"   
