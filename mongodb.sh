@@ -11,6 +11,7 @@ configfile="/etc/mongod.conf"
 mkdir -p "${logsfolder}"
 logfilefullname=$(touch ""${logsfolder}""${logfilename}"_$(date +%F-%S).txt")
 
+echo "$logfilefullname"
 validate_status(){
 statuscode=$(echo $?)
 echo "$statuscode"
